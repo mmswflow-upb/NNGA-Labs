@@ -24,5 +24,4 @@ plt.figure('Circle', facecolor= 'red') # Make a new figure (window)
 plt.axis('equal') # Make axis of the same length
 
 plt.plot(f_cos, f_sine, 'green')
-
 plt.show()
