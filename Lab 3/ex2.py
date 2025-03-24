@@ -59,11 +59,24 @@ algorithm to stop, in other words this is how close f(C) must be on the y-axis t
 """
 
 while 1:
+    #mark where C is everytime we run the loop, by drawing a red circle around its value on x-axis 
     plt.plot(C, 0, '.r')
+    
+    
+    """
+    We use binary search  algorithm (in a way) to find the root, if the functions value changes between A and C, then B has to be shifted
+    to the left where C is, because the root is 100% between A and C since thats where the function changes its value, else the root is on the right
+    between C and B
+    """
     if f(C) * f(A) < 0:
         B = C
     else:
         A = C
+    
+    """
+    If f(C) got close enough to zero on the y-axis (x-axis: y = 0) (smaller than eps), then stop, otherwise keep going to get a more accurate result
+    it's in the form abs(f(C)) because the function evaluated at point C might also be under the x-axis (if the function goes under x-axis thats natural)
+    """
     
     if(np.abs(f(C)) < eps):
         break
