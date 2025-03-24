@@ -5,16 +5,25 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 
-n = int(input("Give me a value for n = "))
+n = int(input("Compute square root for n = "))
 
-step = 0.1
+step = 0.1 # step of the interval [-n,n] (difference between each number in the interval)
 
+"""
+We define the function in this way because, the root of this function is always the sqrt of 'n': x^2 - n = 0 -> n = x^2 -> x = sqrt(n)
+"""
 def f(x):
     return x**2 - n
 
+"""
+We just create the range of numbers here (x-axis) to plot the function
+"""
 x = np.arange(-n, n+0.1, step)
 
-# Array of zeros
+"""
+Create an empty array of zeroes of the same length as the x-axis range in order to plot the line  y = 0 (x-axis)
+this line shows us where the graph of the function intersects with the x-axis
+"""
 z = np.zeros(len(x))
 
 
@@ -24,13 +33,23 @@ plt.plot(x, z)
 plt.grid('on')
 
 
+"""
+We start at 
+"""
+
 A = 0
 B = n
 
-plt.plot(A, 0, 'ok') # 'ok' makes a circle appear in that point
+plt.plot(A, 0, 'ok') # 'ok' makes a circle appear in every point
 plt.plot(B, 0, 'ok') 
 
 C = (A+B)/2
+
+"""
+The closer |f(c)| is to zero the closer C is to the real root, because as we go down the graph or up towards the intersection between the
+x-axis and the graph of the function, the closer we are to the root
+"""
+
 eps = 10**(-14) # Threshold, this is the allowed error
 
 while 1:
