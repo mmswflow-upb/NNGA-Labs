@@ -50,7 +50,13 @@ The closer |f(c)| is to zero the closer C is to the real root, because as we go 
 x-axis and the graph of the function, the closer we are to the root
 """
 
-eps = 10**(-14) # Threshold, this is the allowed error
+
+eps = 10**(-14) 
+
+"""
+Threshold, this is value under which the function evaluated at c (f(C)) has to get for the 
+algorithm to stop, in other words this is how close f(C) must be on the y-axis to the x axis (y = 0)
+"""
 
 while 1:
     plt.plot(C, 0, '.r')
