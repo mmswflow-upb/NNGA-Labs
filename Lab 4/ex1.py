@@ -78,18 +78,40 @@ for i in range (maxE):
                             
     Now we have weight updates proportional to the learning rate and the inputs,
     but we need to apply them on 2 weights no more, so how do we do that?
+    
+    Well we want to find the accumulated change in the two weights, each column in the previously mentioend matrix
+    represents the weight changes which were supposed to be applied on the individual weights, if we wouldn't have had batch
+    weighting (for each input there would be a weight like before), so now we need to sum up these individual input weights into
+    one batch weight, same goes for the bias weights
     """
     
     dw = alpha * x * E
     print('dw=', dw)
     
     """
+    This is what np.sum does here, it sums in each column the numbers stored on each row, so the matrix collapses to a 1x2 matrix
+    or a row vector of 2 columns, each column is the change in one of the two weights (batch and bias weight changes)
     
+    Suppose you had this:
+    
+         |dw1 db1|   |0.2 0.1|
+    dw = |dw2 db2| = |0.0 0.2| --> applying that sum with axis = 0 (sum elements on each row) --> dw =  |(0.2 + 0.0 + 0.4)  (0.1 + 0.2 + 0.1)|
+         |dw3 db3|   |0.4 0.1|
+    
+    ==> dw = |0.6 0.4|
     """
     
     dw = np.sum(dw, axis = 0)
     print('dw=', dw)
-    w = w + dw
+    w = w + dw # here we just apply the change to the weights vector
+    
+    """
+    E**2 just squares the matrix element-wise (each element in the matrix is squared) the matrix doesnt get multiplied with itself
+    then we sum all elements and divide by 2 (LMS function), and we get eGlobal, 
+    which is the computed LMS (Least Mean Square) loss (total error squared)
+    we compare it with minimum allowed error, if it's under it then we stop, if not we keep going until we 
+    reach max num of epochs (maxE)
+    """
     
     eGlobal = 0.5 * np.sum(E**2)
     print('Global error: ', eGlobal)

@@ -1,3 +1,8 @@
+"""
+Perceptron algorithm again, but implemented using matrices instead of 
+going through each element one by one with a for loop
+"""
+
 import numpy as np
 
 T = np.array([0,0,1,0,1])
