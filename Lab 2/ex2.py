@@ -8,7 +8,7 @@ w = np.array([1,3,2])
 
 #perceptron learning algorithm
 while 1:
-    n = np.matmul(X,w) #mathematical multiplication
+    n = np.matmul(X,w) #matrix multiplication
     
     y = (n>=0) * 1 # gets converted directly to 0 or 1 from boolean
     

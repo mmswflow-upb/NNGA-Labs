@@ -35,11 +35,13 @@ perfect solution, because this algorithm can be used on non-linearly separable d
 
 
 """
-Derivative of error squared of derivative of the weight of p
+Derivative of error squared with respect to the weight of p
 
 why do we multiply with -p? Because we want to compute the change in the weight of the p input
 which must be proportional with the error (which is the difference between the true value and the computed Y value), just like 
 in the 2nd lab
+
+You can also try to differentiate it and you will get that result 
 """
 
 def dE2dwp():
@@ -54,7 +56,7 @@ def dE2dwk():
 
 """
 Same thing as above with a single difference, usually bias is just 1 
-so we just change the sign and we multiply with the error  
+so we just change the sign and we multiply with the error  (try also differentiating it)
 """
 def dE2db():
     return ( T - Y() ) * (-1) 
