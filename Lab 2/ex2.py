@@ -59,7 +59,7 @@ while True:
     The tuple `(X.shape[1], 1)` passed to `np.tile` specifies:
     
         • First element (X.shape[1] == 3): repeat e into 3 rows  
-        • Second element (1): do not duplicate columns (keep the original 5 elements in each row)
+        • Second element (1): do not duplicate columns (keep the original 5 elements in each row) (gives how many times to copy into columns, in this case only once per row)
     
     Resulting E has shape (3, 5):
     
