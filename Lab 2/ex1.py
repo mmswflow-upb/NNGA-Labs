@@ -5,7 +5,7 @@ how to group things into 'classes'
 
 import numpy as np
 
-t = np.array([0,0,1,0,1])
+t = np.array([1,0,1,0,1])
 
 """
 True label vector or 't'
@@ -18,7 +18,7 @@ until it will be able to output the True label vector
 
 
 #tuple = [param1, param2] 
-X = np.array([ [1,0], [2,0], [3,0], [0,1], [0,2] ])
+X = np.array([ [0,0], [0,1], [1,0], [1,1], [2,0], [2,1] ])
 
 """
 X is the 4x2 matrix that contains the pairs of (x,y) coords to be classified by this perceptron

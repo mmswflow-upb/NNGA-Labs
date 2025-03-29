@@ -1,0 +1,4 @@
+We were given a list of 7 exercises. You could choose to solve whatever exercises you wanted from that list. 
+The exercises were worth different numbers of points. You could get a grade of 10 by solving 3 exercises and the rest of the points were bonus.
+In total you could get 10/10 for the lab test + 9 bonus points. The exercises were generally very similar to what we had in the labs. Only one of them was
+more 'special' (the 7th one).

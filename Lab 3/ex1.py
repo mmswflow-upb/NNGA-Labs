@@ -8,11 +8,11 @@ k = 0
 
 # weight
 wp = 1
-wk = 1
+wk = 2
 
 # Bias and Target
 
-b = 1
+b = 2
 T = 1
 
 
